@@ -1,26 +1,30 @@
 package org.bedu.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
-@Entity(name = "Productos")
+@Entity
+@Table(name = "Productos")
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-
+    @Column (length = 100, nullable = false)
     private String nombre;
+
+    @Column (length = 100, nullable = false)
     private String categoria;
-    private String x;
 
+    @Column (length = 100, nullable = false)
+    private String marca;
 
+    private BigDecimal precio;
+    private int stock;
 
 
 }
