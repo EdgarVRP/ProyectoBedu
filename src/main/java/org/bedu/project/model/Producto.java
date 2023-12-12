@@ -23,7 +23,7 @@ public class Producto {
     @Column (length = 100, nullable = false)
     private String marca;
 
-    private BigDecimal precio;
+    private double precio;
     private int stock;
 
 
