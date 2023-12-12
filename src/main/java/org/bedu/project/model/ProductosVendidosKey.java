@@ -10,8 +10,8 @@ import lombok.Setter;
 @Getter
 @Embeddable
 public class ProductosVendidosKey {
-    @Column(name = "venta id")
+    @Column(name = "venta_id")
     private long ventaId;
-    @Column(name = "producto id")
+    @Column(name = "product_id")
     private long productoId;
 }

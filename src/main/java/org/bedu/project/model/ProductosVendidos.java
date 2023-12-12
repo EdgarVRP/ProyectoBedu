@@ -14,12 +14,12 @@ public class ProductosVendidos {
     private  ProductosVendidosKey id;
 
     @ManyToOne
-    @MapsId("produc_id")
+    @MapsId("productoId")
     @JoinColumn(name = "product_id")
     private Producto producto;
 
     @ManyToOne
-    @MapsId("vent_id")
+    @MapsId("ventaId")
     @JoinColumn(name = "venta_id)")
     private Venta venta;
 
