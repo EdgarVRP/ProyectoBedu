@@ -21,6 +21,8 @@ public class ProductoController {
     @ResponseStatus(HttpStatus.OK)
     public List<ProductoDTO> findAll(){
         return servicio.findAll();
+
+
     }
 
 
