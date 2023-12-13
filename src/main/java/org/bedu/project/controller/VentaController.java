@@ -1,65 +1,63 @@
 package org.bedu.project.controller;
 
 import org.bedu.project.dto.GenericResponseDTO;
-import org.bedu.project.model.ProductoEntity;
-import org.bedu.project.service.ProductoService;
+import org.bedu.project.model.VentaEntity;
+import org.bedu.project.service.VentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/venta")
 @CrossOrigin(origins = { "*" })
-public class ProductoController {
+public class VentaController {
     @Autowired
-    private ProductoService servicio;
+    private VentaService servicio;
 
-    // Get all products
+    // Get all ventas
     @GetMapping("/all")
-    public ResponseEntity<?> listAllProducts() {
+    public ResponseEntity<?> listAllVentas() {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", servicio.getAll()));
     }
 
-    // Get a product by id
+    // Get a venta by id
     @GetMapping("/{id}")
-    public ResponseEntity<?> getProductById(@PathVariable Long id) {
+    public ResponseEntity<?> getVentaById(@PathVariable Long id) {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", servicio.getById(id)));
     }
 
+    // POST a venta
     @PostMapping("/save")
-    public ResponseEntity<?> saveProduct(@RequestBody ProductoEntity producto) {
+    public ResponseEntity<?> saveVenta(@RequestBody VentaEntity venta) {
         return ResponseEntity.ok()
-                .body(new GenericResponseDTO<>(true, "FULL", servicio.save(producto)));
+                .body(new GenericResponseDTO<>(true, "FULL", servicio.save(venta)));
     }
 
-    // update product
+    // update venta
     @PutMapping(value = "/update/{id}")
-    public ResponseEntity<?> updateProduct(@RequestBody ProductoEntity producto, @PathVariable Long id) {
+    public ResponseEntity<?> updateVenta(@RequestBody VentaEntity venta, @PathVariable Long id) {
         // Mostrando lo que se recibe
-        System.out.println(producto);
+        System.out.println(venta);
         return ResponseEntity.ok()
-                .body(new GenericResponseDTO<>(true, "FULL", servicio.updateById(producto, id)));
+                .body(new GenericResponseDTO<>(true, "FULL", servicio.updateById(venta, id)));
     }
 
-    // delete product
+    // delete venta
     @DeleteMapping(value = "/delete/{id}")
-    public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
+    public ResponseEntity<?> deleteVenta(@PathVariable Long id) {
         servicio.deleteById(id);
         return ResponseEntity.ok()
-                .body(new GenericResponseDTO<>(true, "FULL", "Producto eliminado"));
+                .body(new GenericResponseDTO<>(true, "FULL", "Venta eliminada"));
     }
 
 }
