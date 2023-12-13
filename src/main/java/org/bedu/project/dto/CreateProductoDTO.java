@@ -7,11 +7,13 @@ import java.math.BigDecimal;
 @Data
 public class CreateProductoDTO {
 
-    @NotBlank (message = "Ponga su nombre")
+    @NotBlank (message = "Ponga el nombre de producto")
     private String nombre;
+    @NotBlank (message = "Ponga el cateogira de producto")
     private String categoria;
+    @NotBlank (message = "Ponga la marca de producto")
     private String marca;
-    private BigDecimal precio;
+    private double precio;
     private int stock;
 
 
