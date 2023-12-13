@@ -35,6 +35,6 @@
 
 ## Contacto
 
-Para cualquier consulta o sugerencia, no dudes en ponerte en contacto con nosotros en s10javareact@gmail.com
+Para cualquier consulta o sugerencia, no dudes en ponerte en contacto con nosotros.
 
 ¡Esperamos que disfrutes utilizando "StockFLow" para optimizar y mejorar tus operaciones comerciales! 📊🛍️
